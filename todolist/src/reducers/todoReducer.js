@@ -2,17 +2,15 @@
 
 //will always be an object
 // eaiser to keep add task in App.js, cause has input
-export const initialState = [
+export const initialState =
   {
   item: 'Learn about reducers',
   completed: false,
-  id: 3892987589
-},{
-  item: 'Review',
-  completed: false,
-  id: 3892987588
+  id: 3892987589,
+  todo: []
 }
-]
+
+
 
 //actions
 //toggle complete
@@ -20,21 +18,31 @@ export const initialState = [
 export const todoReducer = (state, action) => {
   switch(action.type){
     case 'TOGGLE_COMPLETED':
-      return{
-        ...state,
-        completed: !state.completed //change complete f to t
-      }
-    case 'Add_Task':
+        let id =action.payload
+        state.todo.map(item => {
+          if(item.id === id){
+            return{
+              ...item,
+              completed: !item.completed
+            }
+          }
+        })
+    case 'ADD_TASK':
       //add to an array
       const newT = {
-        item: action.payload,
+        task: action.payload,
         completed: false,
         id:Math.random()*10
       }
       return{
       ...state,
-      item: [...state, newT]
-        
+      todo: [...state.todo, newT]
+        }
+    case 'COMPLETED':
+        return{
+          ...state,
+          todo: state.todo.filter(item =>
+          !item.completed)
         }
     default:
       return state;

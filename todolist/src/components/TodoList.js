@@ -3,12 +3,12 @@ import Tasks from './Tasks'
 
 
 const TodoList = (props) => {
-    console.log(`todolist props`, props) //returns and array
+    console.log(`todolist props.state`, props) //returns and array
     return(
 <div>
-
-            {props.state.map(e=>(
-            <Tasks key={e.id} item={e} dispatch={props.dispatch}/>
+<h2>{props.item}</h2>
+            {props.todo.map(todoItem=>(
+            <Tasks key={todoItem.id} todoItem={todoItem} dispatch={props.dispatch}/>
             ))}
  
 
