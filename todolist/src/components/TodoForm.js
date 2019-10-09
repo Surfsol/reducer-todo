@@ -3,7 +3,7 @@ import React from "react";
 //add new item to shopping list
 //form will manage its own state, dont pass in props
 const TodoForm = props => {
-  console.log(`form`, props);
+ // console.log(`form`, props);
   //const [newTask, setNewTask] = useState();
 
   const handleChanges = e => {
