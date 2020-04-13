@@ -1,6 +1,4 @@
 //setup reducer need inital state and reducer f()
-
-//will always be an object
 // eaiser to keep add task in App.js, cause has input
 export const initialState =[
   {
