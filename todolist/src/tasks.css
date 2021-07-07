@@ -1,0 +1,9 @@
+.crossout{
+    text-decoration: line-through;
+    color: red;
+}
+
+.notdone{
+    text-decoration: none;
+    color: purple;
+}
